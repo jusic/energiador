@@ -3,7 +3,8 @@ Energiador
 
 A simple energy draw meter for the Jolla phone / SailfishOS. It is currently 
 a very crude hack, that just displays current energy draw. It does not
-work on the Sailfish SDK emulator since the paths are different.
+currently work on the Sailfish SDK emulator since the energy sensor sysfs 
+paths are different.
 
 The aim is to add graphing into the app. Contributions are welcome.
 
@@ -24,10 +25,16 @@ and current draw just shows 0 mA for most of the time. (See QtSystemInfo `qml-ba
 .. _QtBatteryInfo: http://doc.qt.digia.com/qtmobility-1.2/qml-batteryinfo.html#details
 .. _`qml-battery example`: https://qt.gitorious.org/qt/qtsystems/source/f632aee809fed2e96c7f4ed598ed7615a008d9b1:examples/systeminfo/qml-battery
 
-It is possible to use command "upower -d" to figure out the correct paths
+It is possible to use command "upower -d" to figure out the correct sysfs paths
 for the energy sensors both on the Jolla phone and Sailfish SDK emulator.
+On the device, the power information can be directly read from sysfs path
+``/sys/devices/platform/msm_ssbi.0/pm8038-core/pm8921-charger/power_supply/battery/``, e.g. ``current_now`` and ``voltage_now``.
 
-By installing Python on the phone, it is simple to write a Python script
+
+I want power history graphing now!
+----------------------------------
+
+Ok, the app is not yet there, but it is simple enough to write a Python script
 for collecting data over time and graphing it later. A sample script
 is provided under ``/scripts/energymeasure.py``.
 
