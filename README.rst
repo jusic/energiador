@@ -34,7 +34,7 @@ On the device, the power information can be directly read from sysfs path
 I want power history graphing now!
 ----------------------------------
 
-Ok, the app is not yet there, but it is simple enough to write a Python script
+Ok, the app is not there yet, but it is simple enough to write a Python script
 for collecting data over time and graphing it later. A sample script
 is provided under ``/scripts/energymeasure.py``.
 
@@ -55,7 +55,7 @@ and run
 
 This produces a plot of the energy consumption over time. There are some
 issues when the device is idle; the Python interpreter seems to stall at
-some point (maybe time.sleep?).
+times (maybe time.sleep? or reading from the sysfs blocks?).
 
 .. image:: pics/script_plot_1_0_1_12.png
 
