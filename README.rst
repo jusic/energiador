@@ -1,7 +1,7 @@
 Energiador
 ==========
 
-Simple energy draw meter for the Jolla phone / SailfishOS. It is currently 
+A simple energy draw meter for the Jolla phone / SailfishOS. It is currently 
 a very crude hack, that just displays current energy draw. It does not
 work on the Sailfish SDK emulator since the paths are different.
 
