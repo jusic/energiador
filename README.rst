@@ -50,7 +50,7 @@ This produces a plot of the energy consumption over time. There are some
 issues when the device is idle; the Python interpreter seems to stall at
 some point (maybe time.sleep?).
 
-.. image:: https://github.com/jusic/energiador/blob/master/pics/script_plot_1_0_1_12.png
+.. image:: https://github.com/jusic/energiador/master/pics/script_plot_1_0_1_12.png
 
 This example picture is produced by the above-mentioned script, running
 in ``screen`` on Jolla phone running SailfishOS 1.0.1.12. The other half daemon
