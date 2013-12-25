@@ -19,6 +19,14 @@ License
 The code (including scripts) is placed under MIT license by Jussi Sainio.
 
 
+Screenshots
+-----------
+
+.. image:: pics/screenshot_0.2.png
+   :height: 400
+.. image:: pics/screenshot_cover_0.2.png
+
+
 Notes
 -----
 
@@ -33,6 +41,9 @@ It is possible to use command "upower -d" to figure out the correct sysfs paths
 for the energy sensors both on the Jolla phone and Sailfish SDK emulator.
 On the device, the power information can be directly read from sysfs path
 ``/sys/devices/platform/msm_ssbi.0/pm8038-core/pm8921-charger/power_supply/battery/``, e.g. ``current_now`` and ``voltage_now``.
+
+Standby mode is still a challenge, since timers do not fire when they are
+supposed to. (This affects also the Python script below.)
 
 
 I want power history logs now!
