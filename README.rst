@@ -66,4 +66,4 @@ in ``screen`` on Jolla phone running SailfishOS 1.0.1.12. The other half daemon
 (known to have `a power drain problem`_ in this version) was turned off 
 with ``systemctl stop tohd.service``.
 
-.. _`a bad power drain problem`: http://www.jollatides.com/2013/12/23/source-of-battery-drain-nfc-always-on-solution/
+.. _`a power drain problem`: http://www.jollatides.com/2013/12/23/source-of-battery-drain-nfc-always-on-solution/
