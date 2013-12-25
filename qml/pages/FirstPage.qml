@@ -1,6 +1,7 @@
 import QtQuick 2.0
 import QtSystemInfo 5.0
 import Sailfish.Silica 1.0
+import "../components"
 
 Page {
     id: page
@@ -22,12 +23,33 @@ Page {
                 text: "Current status"
             }
 
-            Label { id: foo
+            Label { id: status
                 x: Theme.paddingLarge
                 font.pointSize: 10
                 Connections {
                     target: energiadorInstance
-                    onResultReady: foo.text = result
+                    onResultReady: status.text = result
+                }
+            }
+
+            LinePlot {
+                id: plot
+                width: parent.width - 2*Theme.paddingLarge
+                height: 400
+                //anchors.top: status.bottom
+                //anchors.bottom: parent.bottom
+                x: Theme.paddingLarge
+
+                /*Component.onCompleted: {
+
+                }*/
+
+                Connections {
+                    target: energiadorInstance
+                    onUpdateList: {
+                        plot.dataListModel = list
+                        plot.update()
+                    }
                 }
             }
         }

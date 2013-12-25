@@ -17,7 +17,8 @@ OTHER_FILES += qml/Energiador.qml \
     qml/pages/FirstPage.qml \
     rpm/Energiador.spec \
     rpm/Energiador.yaml \
-    Energiador.desktop
+    Energiador.desktop \
+    qml/components/LinePlot.qml
 
 HEADERS += \
     src/worker.h \

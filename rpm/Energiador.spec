@@ -13,10 +13,10 @@ Name:       Energiador
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Simple energy profiler
-Version:    0.1
+Version:    0.2
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    MIT
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  Energiador.yaml
@@ -30,8 +30,7 @@ BuildRequires:  pkgconfig(Qt5SystemInfo)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
-
+Profiles energy consumption
 
 %prep
 %setup -q -n %{name}-%{version}

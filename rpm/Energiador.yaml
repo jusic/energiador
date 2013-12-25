@@ -1,32 +1,32 @@
 Name: Energiador
 Summary: Simple energy profiler
-Version: 0.1
+Version: 0.2
 Release: 1
 Group: Qt/Qt
 URL: http://example.org/
-License: LICENSE
+License: MIT
 Sources:
 - '%{name}-%{version}.tar.bz2'
-Description: |
-  Short description of my SailfishOS Application
+Description: |-
+  Profiles energy consumption
 Configure: none
 Builder: qtc5
 PkgConfigBR:
-- Qt5SystemInfo
-- Qt5Quick
-- Qt5Qml
-- Qt5Core
 - sailfishapp >= 0.0.10
+- Qt5Core
+- Qt5Qml
+- Qt5Quick
+- Qt5SystemInfo
 Requires:
-- qt5-qtdeclarative-systeminfo
 - sailfishsilica-qt5 >= 0.10.9
+- qt5-qtdeclarative-systeminfo
 Files:
-- '%{_bindir}'
-- '%{_datadir}/%{name}/qml'
-- '%{_datadir}/applications/%{name}.desktop'
-- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
-- /usr/bin
-- /usr/share/Energiador
-- /usr/share/applications
 - /usr/share/icons/hicolor/86x86/apps
+- /usr/share/applications
+- /usr/share/Energiador
+- /usr/bin
+- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+- '%{_datadir}/applications/%{name}.desktop'
+- '%{_datadir}/%{name}/qml'
+- '%{_bindir}'
 PkgBR: []

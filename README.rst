@@ -2,11 +2,15 @@ Energiador
 ==========
 
 A simple energy draw meter for the Jolla phone / SailfishOS. It is currently 
-a very crude hack, that just displays current energy draw. It does not
-currently work on the Sailfish SDK emulator since the energy sensor sysfs 
-paths are different.
+a very crude hack, that just displays current energy draw and a history
+graph of max. 120 previous data points. 
 
-The aim is to add graphing into the app. Contributions are welcome.
+There are some issues when the device is in standby; the QTimer does not
+fire every 250ms, but much more rarely. This is probably due to 
+aggressive power saving mode in Jolla / Sailfish. I do not yet know how to work
+around this.
+
+Comments, ideas and contributions are welcome.
 
 
 License
@@ -31,8 +35,8 @@ On the device, the power information can be directly read from sysfs path
 ``/sys/devices/platform/msm_ssbi.0/pm8038-core/pm8921-charger/power_supply/battery/``, e.g. ``current_now`` and ``voltage_now``.
 
 
-I want power history graphing now!
-----------------------------------
+I want power history logs now!
+------------------------------
 
 Ok, the app is not there yet, but it is simple enough to write a Python script
 for collecting data over time and graphing it later. A sample script
@@ -53,15 +57,13 @@ and run
 
   $ python plotcsv_energy log.csv
 
-This produces a plot of the energy consumption over time. There are some
-issues when the device is idle; the Python interpreter seems to stall at
-times (maybe time.sleep? or reading from the sysfs blocks?).
+This produces a plot of the energy consumption over time. 
 
 .. image:: pics/script_plot_1_0_1_12.png
 
 This example picture is produced by the above-mentioned script, running
 in ``screen`` on Jolla phone running SailfishOS 1.0.1.12. The other half daemon
-(known to have `a bad power drain problem`_ in this version) was turned off 
+(known to have `a power drain problem`_ in this version) was turned off 
 with ``systemctl stop tohd.service``.
 
 .. _`a bad power drain problem`: http://www.jollatides.com/2013/12/23/source-of-battery-drain-nfc-always-on-solution/
