@@ -57,7 +57,7 @@ implementation.
 `UPower documentation`_ 
 notes that it can control "latency of different operations", by adjusting ``/dev/cpu_dma_latency``, ``/dev/network_latency`` and 
 ``/dev/network_throughput``. At least the ``/dev/cpu_dma_latency`` value changes
-between 3ns, 200ns and 2000s (sic!). The `upowerd`` should publish a 
+between 3us, 200us and 2000s (sic!). The `upowerd`` should publish a 
 `QoS DBus interface`_ for adjusting these values, but I did not manage to 
 get it working on Sailfish yet. Nor have I found a way to set up a hardware 
 timer nicely. There exists a `QSystemAlignedTimer`_ class which uses 

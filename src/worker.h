@@ -1,10 +1,7 @@
 #ifndef WORKER_H
 #define WORKER_H
 
-#ifdef QT_QML_DEBUG
 #include <QtQuick>
-#endif
-
 #include <sailfishapp.h>
 
 class BatteryWorker : public QObject
